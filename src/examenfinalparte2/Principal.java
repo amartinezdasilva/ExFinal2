@@ -1,6 +1,9 @@
 
 package examenfinalparte2;
-
+/**
+ * 
+ * @author Aaron
+ */
 public class Principal {
 
     public static boolean p = false;
