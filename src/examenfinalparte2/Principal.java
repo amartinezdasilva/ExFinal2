@@ -4,7 +4,7 @@ package examenfinalparte2;
 import java.util.Scanner;
 
 /**
- * 
+ * el programa evalua si un numero que introducimos es o no primo
  * @author Aaron
  */
 public class Principal {
@@ -20,15 +20,15 @@ public class Principal {
             if (dig <= 0) {
                 System.out.println("Ingrese como parámetro, un numero de digito correcto (mayor que 0): ");
             }
-        } while (dig <= 0); 
+        } while (dig <= 0); //introducir un numero mayor que 0
         for (int comparar = 1; comparar <= 99999; comparar++) {
             ndig = divisionEntera(comparar); 
             
            
             if (ndig == dig) {
-                if (comparar < 4) { 
+                if (comparar < 4) { //si el numero que compara es menor a  4 , es primo
                     primo = true;
-                } else if (comparar % 2 == 0) {
+                } else if (comparar % 2 == 0) {//si es divisible entre 2 , no es primo
                     primo = false;
                 } else { 
                     int divisores = 0;
@@ -47,6 +47,14 @@ public class Principal {
             }
         }
     }
+    /**
+     * calcula el numero de divisores del numero introducido
+     * @param i1 el divisor
+     * @param limite el maximo de divisores
+     * @param numComparar numero del que se van a contar los divisores
+     * @param countDivisores cuenta los divisores
+     * @return si es o no primo 
+     */
    
     private static boolean calculoNumeroDivisores(int i1, int limite, int numComparar, int countDivisores) {
         boolean esPrimo = false;
@@ -64,9 +72,13 @@ public class Principal {
             esPrimo = true;
         }
         
-        return esPrimo;
+        return primo;
     }
-
+/**
+ * cuenta el numero de divisiones enteras que se pueden hacer con el numero dado
+ * @param numComparar dividendo
+ * @return el numero de las divisiones enteras
+ */
     
     private static int divisionEntera(int numComparar) {
         int aux = numComparar;
@@ -77,6 +89,10 @@ public class Principal {
         }
         return contador;
     }
+    /**
+     * pide un numero entero por pantalla
+     * @return retorna el numero entero introducido
+     */
     
     
     public static int meterDigito() {
